@@ -26,7 +26,7 @@ class App extends React.Component {
   fetchData(event) {
     this.setState({ city: event.target.value });
 
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${config.api_key}&q=${this.state.city}&days=3&aqi=no&alerts=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${config.api_key}&q=${this.state.city}&days=3&aqi=no&alerts=no`;
 
     axios({
       method: 'get',
