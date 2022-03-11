@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-800;
+  @apply text-slate-300;
+}
+
+a {
+  @apply text-slate-200;
+  text-decoration: underline;
+}
+
+a:hover {
+  @apply text-slate-50;
+}
+
+.App {
+  @apply place-content-center;
+
+  @apply my-5;
+  @apply mx-auto;
+
+  @apply shadow-md;
+  @apply shadow-black;
+  @apply rounded-md;
+
+  @apply bg-slate-200;
+  @apply text-slate-800;
+
+  width: 800px;
+}
+
+.App-header {
+  @apply p-2;
+  @apply text-center;
+
+  font-size: 2rem;
+}
+
+.App-nav {
+  @apply flex;
+  @apply bg-slate-50;
+}
+
+.city-label {
+  @apply p-2;
+}
+
+.city-select {
+  @apply p-2;
+  @apply flex-grow;
+  @apply bg-slate-50;
+}
+
+.App-footer {
+  @apply flex;
+  @apply py-4;
+}
+
+.line-toggles,
+.temp-toggles {
+  @apply flex;
+  @apply flex-auto;
+  @apply place-content-center;
+}
+
+.line-toggles .toggle-button:first-child {
+  @apply rounded-r-none;
+}
+.line-toggles .toggle-button:last-child {
+  @apply rounded-l-none;
+}
+
+.line-toggles .toggle-button:first-child,
+.temp-toggles .toggle-button:first-child {
+  @apply border-r-2;
+  @apply border-slate-600;
+}
+
+.temp-toggles .toggle-button:first-child {
+  @apply rounded-r-none;
+}
+.temp-toggles .toggle-button:last-child {
+  @apply rounded-l-none;
+}
+
+.toggle-button {
+  @apply p-2;
+  /* @apply flex-auto; */
+  @apply bg-slate-300;
+  @apply rounded-md;
+}
+
+.toggle-button.active {
+  @apply bg-slate-500;
+  @apply text-slate-50;
+}
