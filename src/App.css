@@ -44,14 +44,12 @@ a:hover {
   @apply bg-slate-50;
 }
 
-.city-label {
-  @apply p-2;
+.App-main {
+  @apply pt-4;
 }
 
-.city-select {
+.city-label {
   @apply p-2;
-  @apply flex-grow;
-  @apply bg-slate-50;
 }
 
 .App-footer {
@@ -88,7 +86,6 @@ a:hover {
 
 .toggle-button {
   @apply p-2;
-  /* @apply flex-auto; */
   @apply bg-slate-300;
   @apply rounded-md;
 }

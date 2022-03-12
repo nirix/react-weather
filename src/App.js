@@ -1,8 +1,9 @@
 import './App.css';
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 import config from './config.json'
 import React from 'react';
 import axios from 'axios';
+import CitySelect from './CitySelect'
 
 class App extends React.Component {
   constructor(props) {
@@ -23,8 +24,8 @@ class App extends React.Component {
     this.setTempF = this.setTempF.bind(this)
   }
 
-  fetchData(event) {
-    this.setState({ city: event.target.value });
+  fetchData(city) {
+    this.setState({ city: city });
 
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${config.api_key}&q=${this.state.city}&days=3&aqi=no&alerts=no`;
 
@@ -62,19 +63,6 @@ class App extends React.Component {
   }
 
   render() {
-    const cities = [
-      { name: 'Sydney' },
-      { name: 'Melbourne' },
-      { name: 'Warsaw' },
-      { name: 'Hong Kong' },
-    ];
-
-    let cityOptions = cities.map((city) => {
-      return (
-        <option value={city.name} key={city.name}>{city.name}</option>
-      )
-    })
-
     return (
       <div className="App">
         <header className="App-header">
@@ -84,10 +72,7 @@ class App extends React.Component {
           <div className="city-label">
             Show weather for:
           </div>
-          <select className="city-select" onChange={this.fetchData}>
-            <option value="">Choose a city...</option>
-            {cityOptions}
-          </select>
+          <CitySelect onSelect={this.fetchData} />
         </nav>
         <main className="App-main">
           <LineChart
